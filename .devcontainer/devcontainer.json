@@ -1,0 +1,68 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/rust
+{
+	"name": "Rust",
+
+	"dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    "service": "vscode",
+    "runServices": [
+        "vscode"
+    ],
+    "shutdownAction": "stopCompose",
+    "workspaceFolder": "/workspace",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"rust-lang.rust-analyzer",
+				"vadimcn.vscode-lldb",
+				"tamasfe.even-better-toml",
+				"vscode-icons-team.vscode-icons",
+				"ms-azuretools.vscode-docker"
+			],
+			"settings": {
+				// "files.eol": "\n",
+				"editor.formatOnSave": true,
+				// "editor.codeActionsOnSaveTimeout": 3000,
+				"[rust]": {
+					"editor.defaultFormatter": "rust-lang.rust-analyzer"
+				}
+				// "rust-analyzer.serverPath": "/usr/local/bin/rust-analyzer",
+				// "remote.extensionKind": {
+				// 	"ms-azuretools.vscode-docker": "workspace"
+				// },
+			}
+		}
+	},
+
+	// https://aka.ms/vscode-remote/samples/docker-in-docker.
+	"mounts": [ 
+		"source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
+	],
+	
+	// Use 'mounts' to make the cargo cache persistent in a Docker Volume.
+	// "mounts": [
+	// 	{
+	// 		"source": "devcontainer-cargo-cache-${devcontainerId}",
+	// 		"target": "/usr/local/cargo",
+	// 		"type": "volume"
+	// 	}
+	// ]
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "rustc --version",
+	// "postCreateCommand": "~/.windows.sh",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Comment/remove to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "maharris"
+}
