@@ -1,0 +1,39 @@
+[package]
+name = "recursion"
+version = "0.1.0"
+edition = "2021"
+default-run = "factorial"
+
+[[bin]]
+name = "factorial"
+path = "src/bin/factorial.rs"
+
+[[bin]]
+name = "fibonacci"
+path = "src/bin/fibonacci.rs"
+
+[[bin]]
+name = "dynamic_fibonacci"
+path = "src/bin/dynamic_fibonacci.rs"
+
+[[bin]]
+name = "knights_tour"
+path = "src/bin/knights_tour.rs"
+
+[[bin]]
+name = "n_queens"
+path = "src/bin/n_queens.rs"
+
+[[bin]]
+name = "authors_n_queens"
+path = "src/bin/authors_n_queens.rs"
+
+[[bin]]
+name = "n_queens_redux"
+path = "src/bin/n_queens_redux.rs"
+
+[[bin]]
+name = "hanoi"
+path = "src/bin/hanoi.rs"
+
+[dependencies]
