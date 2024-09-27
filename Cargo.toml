@@ -2,7 +2,7 @@
 name = "recursion"
 version = "0.1.0"
 edition = "2021"
-default-run = "dynamic_fibonacci"
+default-run = "knights_tour"
 
 [[bin]]
 name = "factorial"
@@ -15,5 +15,9 @@ path = "src/bin/fibonacci.rs"
 [[bin]]
 name = "dynamic_fibonacci"
 path = "src/bin/dynamic_fibonacci.rs"
+
+[[bin]]
+name = "knights_tour"
+path = "src/bin/knights_tour.rs"
 
 [dependencies]
