@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  vscode:
+    build: 
+      context: ./
+      dockerfile: ./fedora/Dockerfile
+      # dockerfile: ./ubuntu/Dockerfile
+      args:
+        USERNAME: maharris
+        # ARCH: aarch64
+    init: true
+    volumes:
+      - ../:/workspace
+      # Docker socket to access Docker server
+      - /var/run/docker.sock:/var/run/docker.sock
+      # SSH directory for Linux, OSX and WSL
+      # On Linux and OSX, a symlink /mnt/ssh <-> ~/.ssh is
+      # created in the container. On Windows, files are copied
+      # from /mnt/ssh to ~/.ssh to fix permissions.
+      # - ~/.ssh:/mnt/ssh
+      # # Shell history persistence
+      # - ~/.zsh_history:/root/.zsh_history
+      # Git config
+      # - ~/.gitconfig:/root/.gitconfig
+    environment:
+      - TZ=America/New_York
+    user: maharris
+    # Needed for debugging
+    # cap_add:
+    #   - SYS_PTRACE
+    # security_opt:
+    #   - seccomp:unconfined
+    # entrypoint: [ "bash", "-c", "while sleep 1000; do :; done" ]
